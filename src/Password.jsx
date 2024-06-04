@@ -45,7 +45,9 @@ useEffect(() => {
 
 
   return (
+    
     <div>
+        <h1>Hello</h1>
         <input type="text" value={password} />
         <input type="checkbox" onChange={() => {
             setNumberAllow((Number) => !Number)
