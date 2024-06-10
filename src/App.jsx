@@ -9,6 +9,7 @@ import AboutUs from './AboutUs';
 import Count from './Count';
 import "./Password"
 import Password from './Password';
+import Productdeatail from './Productdeatail';
 
 
 
@@ -18,32 +19,32 @@ function App(){
         {
             id : 1,
             image:'https://images.pexels.com/photos/70497/pexels-photo-70497.jpeg',
-            name:'kishan',
-            description:'hello deshlsk'
+            name:'kishdfbfbdfban',
+            description:'hellcgjfyjjjjfjfjjfjjo deshlsk'
         },
         {
             id : 2,
             image:'https://images.pexels.com/photos/70497/pexels-photo-70497.jpeg',
             name:'kishan',
-            description:'hello deshlsk'
+            description:'hellgjfgjgfjfgjfgjfgjfgjfgjfjjfjfgo deshlsk'
         },
         {
             id : 3,
             image:'https://images.pexels.com/photos/70497/pexels-photo-70497.jpeg',
-            name:'kishan',
-            description:'hello deshlsk'
+            name:'kisxcvxxxxbhan',
+            description:'hellocgcjgjgfhggfdhjfgjhfhjfjfg deshlsk'
         },
         {
             id : 4,
             image:'https://images.pexels.com/photos/70497/pexels-photo-70497.jpeg',
             name:'kisv vncncncvncnhan',
-            description:'hello cvncnvncdeshlsk'
+            description:'hello ccgncgncgncfgfcmfmvncnvncdeshlsk'
         },
         {
             id : 5,
             image:'https://images.pexels.com/photos/70497/pexels-photo-70497.jpeg',
-            name:'kiscvbvbcbchan',
-            description:'hello cbhhdhhdeshlsk'
+            name:'kiscvbxbxbxbvbcbchan',
+            description:'hello cbhhdhhdefhjffhfhgshlsk'
         }
     ]
     return(
@@ -64,12 +65,14 @@ function App(){
             <Cart/>
             <Cart/> */}
             <Routes>
-                <Route path='/' element={<Password/>}></Route>
-                <Route path='/Home' element={<Home data={product}/>}></Route>
+                <Route path='/pass' element={<Password/>}></Route>
+                <Route path='/' element={<Home data={product}/>}></Route>
                 <Route path='/AboutUs' element={<AboutUs/>}></Route>
                 <Route path='/Login' element={<Login/>}></Route>
                 <Route path='/Signup' element={<Signup/>}></Route>
                 <Route path='/Count' element={<Count/>}></Route>
+                <Route path='/product/:id' element={<Productdeatail productData={product}/>}></Route>
+
             </Routes>
             <Footer/>
         </BrowserRouter>

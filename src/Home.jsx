@@ -1,5 +1,6 @@
 import React from 'react'
 import './App.css'
+import { Link } from 'react-router-dom'
 
 export default function Home({data}) {
     return (
@@ -11,7 +12,8 @@ export default function Home({data}) {
                 <img src={i.image} alt="Delicious Food"/>
                 <div className="card-content">
                     <h2>{i.name}</h2>
-                    <p>{i.description}</p>
+                    <Link to={`/product/${i.id}`}><button>view product</button></Link>
+                    
                 </div>
             </div>
         </div>
