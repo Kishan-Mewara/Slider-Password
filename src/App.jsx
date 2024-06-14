@@ -1,4 +1,4 @@
-import React from 'react'
+import { useState } from 'react';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import Home from './Home';
@@ -10,41 +10,54 @@ import Count from './Count';
 import "./Password"
 import Password from './Password';
 import Productdeatail from './Productdeatail';
+import Addtocart from './Addtocart';
 
 
 
 function App(){
+
+    const [cart, setCart] = useState([]);
+
+    const addToCart = (product) => {
+      setCart((prevCart) => [...prevCart, product]);
+    };
+
 
     const product = [
         {
             id : 1,
             image:'https://images.pexels.com/photos/70497/pexels-photo-70497.jpeg',
             name:'kishdfbfbdfban',
-            description:'hellcgjfyjjjjfjfjjfjjo deshlsk'
+            description:'hellcgjfyjjjjfjfjjfjjo deshlsk',
+            price:23
         },
         {
             id : 2,
             image:'https://images.pexels.com/photos/70497/pexels-photo-70497.jpeg',
             name:'kishan',
-            description:'hellgjfgjgfjfgjfgjfgjfgjfgjfjjfjfgo deshlsk'
+            description:'hellgjfgjgfjfgjfgjfgjfgjfgjfjjfjfgo deshlsk',
+            price:24
         },
         {
             id : 3,
             image:'https://images.pexels.com/photos/70497/pexels-photo-70497.jpeg',
             name:'kisxcvxxxxbhan',
-            description:'hellocgcjgjgfhggfdhjfgjhfhjfjfg deshlsk'
+            description:'hellocgcjgjgfhggfdhjfgjhfhjfjfg deshlsk',
+            price:25
         },
         {
             id : 4,
             image:'https://images.pexels.com/photos/70497/pexels-photo-70497.jpeg',
             name:'kisv vncncncvncnhan',
-            description:'hello ccgncgncgncfgfcmfmvncnvncdeshlsk'
+            description:'hello ccgncgncgncfgfcmfmvncnvncdeshlsk',
+            price:26
         },
         {
             id : 5,
             image:'https://images.pexels.com/photos/70497/pexels-photo-70497.jpeg',
             name:'kiscvbxbxbxbvbcbchan',
-            description:'hello cbhhdhhdefhjffhfhgshlsk'
+            description:'hello cbhhdhhdefhjffhfhgshlsk',
+            price:27
         }
     ]
     return(
@@ -71,7 +84,8 @@ function App(){
                 <Route path='/Login' element={<Login/>}></Route>
                 <Route path='/Signup' element={<Signup/>}></Route>
                 <Route path='/Count' element={<Count/>}></Route>
-                <Route path='/product/:id' element={<Productdeatail productData={product}/>}></Route>
+                <Route path='/cart' element={<Addtocart cart={cart}/>}></Route>
+                <Route path='/product/:id' element={<Productdeatail productCart={product} addToCart={addToCart}/>}></Route>
 
             </Routes>
             <Footer/>

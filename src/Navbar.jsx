@@ -16,6 +16,8 @@ function Navbar(){
                     <li> <Link to='/AboutUs'> About Us</Link></li>
                     <li><Link to='/login'>Login</Link></li>
                     <li><Link to='/signup'>SignUp</Link></li>
+                    <li><Link to='/Addtocart'>Cart</Link></li>
+                    <li><Link to='/Productdetail'>Productdetail </Link></li>
                 </ul>
   </div>
   <div className="search">
