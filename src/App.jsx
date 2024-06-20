@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import Home from './Home';
@@ -18,48 +18,62 @@ function App(){
 
     const [cart, setCart] = useState([]);
 
-    const addToCart = (product) => {
-      setCart((prevCart) => [...prevCart, product]);
+    const addToCart = (Addproduct) => {
+      setCart((prevCart) => [...prevCart, Addproduct]);
     };
 
 
-    const product = [
-        {
-            id : 1,
-            image:'https://images.pexels.com/photos/70497/pexels-photo-70497.jpeg',
-            name:'kishdfbfbdfban',
-            description:'hellcgjfyjjjjfjfjjfjjo deshlsk',
-            price:23
-        },
-        {
-            id : 2,
-            image:'https://images.pexels.com/photos/70497/pexels-photo-70497.jpeg',
-            name:'kishan',
-            description:'hellgjfgjgfjfgjfgjfgjfgjfgjfjjfjfgo deshlsk',
-            price:24
-        },
-        {
-            id : 3,
-            image:'https://images.pexels.com/photos/70497/pexels-photo-70497.jpeg',
-            name:'kisxcvxxxxbhan',
-            description:'hellocgcjgjgfhggfdhjfgjhfhjfjfg deshlsk',
-            price:25
-        },
-        {
-            id : 4,
-            image:'https://images.pexels.com/photos/70497/pexels-photo-70497.jpeg',
-            name:'kisv vncncncvncnhan',
-            description:'hello ccgncgncgncfgfcmfmvncnvncdeshlsk',
-            price:26
-        },
-        {
-            id : 5,
-            image:'https://images.pexels.com/photos/70497/pexels-photo-70497.jpeg',
-            name:'kiscvbxbxbxbvbcbchan',
-            description:'hello cbhhdhhdefhjffhfhgshlsk',
-            price:27
+    // const product = [
+    //     {
+    //         id : 1,
+    //         image:'https://images.pexels.com/photos/70497/pexels-photo-70497.jpeg',
+    //         name:'kishdfbfbdfban',
+    //         description:'hellcgjfyjjjjfjfjjfjjo deshlsk',
+    //         price:23
+    //     },
+    //     {
+    //         id : 2,
+    //         image:'https://images.pexels.com/photos/70497/pexels-photo-70497.jpeg',
+    //         name:'kishan',
+    //         description:'hellgjfgjgfjfgjfgjfgjfgjfgjfjjfjfgo deshlsk',
+    //         price:24
+    //     },
+    //     {
+    //         id : 3,
+    //         image:'https://images.pexels.com/photos/70497/pexels-photo-70497.jpeg',
+    //         name:'kisxcvxxxxbhan',
+    //         description:'hellocgcjgjgfhggfdhjfgjhfhjfjfg deshlsk',
+    //         price:25
+    //     },
+    //     {
+    //         id : 4,
+    //         image:'https://images.pexels.com/photos/70497/pexels-photo-70497.jpeg',
+    //         name:'kisv vncncncvncnhan',
+    //         description:'hello ccgncgncgncfgfcmfmvncnvncdeshlsk',
+    //         price:26
+    //     },
+    //     {
+    //         id : 5,
+    //         image:'https://images.pexels.com/photos/70497/pexels-photo-70497.jpeg',
+    //         name:'kiscvbxbxbxbvbcbchan',
+    //         description:'hello cbhhdhhdefhjffhfhgshlsk',
+    //         price:27
+    //     }
+    // ]
+    const [product, setProduct] = useState([])
+
+
+
+   useEffect(() => {
+    const getProduct = async() => {
+        let getP = await fetch('https://fakestoreapi.com/products')
+         getP = await getP.json()
+        console.log('getP',(getP));
+         setProduct(getP)
+         console.log('product',product);
         }
-    ]
+        getProduct()
+   },[])
     return(
         <>
         <BrowserRouter>

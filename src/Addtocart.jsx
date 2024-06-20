@@ -35,6 +35,7 @@
 // Cart.js
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './Addtocart.css'
 
 function Addtocart({ cart }) {
   return (
